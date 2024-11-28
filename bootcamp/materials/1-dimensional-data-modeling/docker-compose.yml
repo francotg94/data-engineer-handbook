@@ -10,12 +10,11 @@ services:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     ports:
-      - "${HOST_PORT}:5432"
+      - "${HOST_PORT}:5433"
     volumes:
       - ./:/bootcamp/
       - ./data.dump:/docker-entrypoint-initdb.d/data.dump
       - ./scripts/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
       - postgres-data:/var/lib/postgresql/data
-
 volumes:
   postgres-data:
